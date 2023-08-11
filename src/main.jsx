@@ -2,9 +2,22 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
+import { BrowserRouter } from 'react-router-dom'
+import { ThemeProvider, createTheme } from '@mui/material'
+
+const theme = createTheme({
+  typography: {
+      fontFamily: "Inter, sans-serif",
+      fontsize: "1rem"
+  }
+})
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <App />
+    <ThemeProvider theme={theme}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </ThemeProvider>
   </React.StrictMode>,
 )
