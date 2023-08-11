@@ -1,10 +1,30 @@
 import { AppBar, Box, Button, ButtonBase, ThemeProvider, Toolbar, Typography, createTheme } from "@mui/material";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const NavBar = () => {
+    const [hState,sethState] = useState("top")
+
+    useEffect(()=>{
+        var lastVal = 0
+        window.onscroll = function(){
+            let y = window.scrollY
+            if(y > lastVal){sethState("down")}
+            if(y < lastVal) {sethState("up")}
+            if(y === 0) {sethState("top")}
+            lastVal = y
+        }        
+    },[])
+
     return (
-            <Box sx={{flexGrow: 1}}>
-                <AppBar position="static" sx={{ bgcolor: "#fff", boxShadow: "none" }}>
+            <Box 
+                sx={{
+                    bgcolor: "transparent",
+                    backdropFilter: "blur(5px)",
+                    position: "sticky",
+                    top: 0
+                }}
+            >
+                <AppBar position="static" sx={{ bgcolor: "inherit", boxShadow: "none" }}>
                     <Toolbar>
                         <Box sx={{ flexGrow: 1 }}>
                             <ButtonBase 
@@ -64,7 +84,7 @@ const NavBar = () => {
                                     px: 20/8
                                 }}
                             >
-                                Contact Me →
+                                Resume
                             </Typography>
                         </ButtonBase>
                     </Toolbar>
