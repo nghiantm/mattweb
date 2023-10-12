@@ -1,4 +1,4 @@
-import { AppBar, Box, Button, ButtonBase, ThemeProvider, Toolbar, Typography, createTheme } from "@mui/material";
+import { AppBar, Box, Button, ButtonBase, Link, ThemeProvider, Toolbar, Typography, createTheme } from "@mui/material";
 import React, { useEffect, useState } from "react";
 
 const NavBar = () => {
@@ -84,7 +84,15 @@ const NavBar = () => {
                                     px: 20/8
                                 }}
                             >
-                                Resume
+                                <Link
+                                    href="https://nghiaresume.s3.amazonaws.com/Nghia_Nguyen_Resume.pdf"
+                                    target="_blank"
+                                    sx={{
+                                        color: "inherit"
+                                    }}
+                                >
+                                    Resume
+                                </Link>
                             </Typography>
                         </ButtonBase>
                     </Toolbar>

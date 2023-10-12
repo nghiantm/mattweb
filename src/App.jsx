@@ -5,7 +5,6 @@ import About from "./components/About"
 function App() {
   return (
     <>
-      <NavBar />
       <Routes>
         <Route path="/" element={<About />} />
       </Routes>
