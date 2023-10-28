@@ -136,7 +136,7 @@ const About = props => {
                                 </ButtonBase>
 
                                 <ButtonBase 
-                                    href="https://nghiaresume.s3.amazonaws.com/Nghia_Nguyen_Resume.pdf"
+                                    href="https://nghiaresume.s3.amazonaws.com/Nghia_Nguyen_Resume_Drexel.pdf"
                                     target="_blank"
                                     sx={{ 
                                         bgcolor: "#0188ff",
